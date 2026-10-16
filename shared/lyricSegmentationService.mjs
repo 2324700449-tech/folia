@@ -227,7 +227,7 @@ const runOpenAICompatible = async (lines, env, fetchImpl) => {
       ? { thinking: { type: 'disabled' }, ...params }
       : params;
 
-    const result = await sendOpenAICompatible(apiUrl, env.OPENAI_API_KEY, {
+    const result = await sendOpenAICompatible(apiUrl, env.OPENAI_API_KEY?.trim(), {
       model,
       messages,
       temperature,
